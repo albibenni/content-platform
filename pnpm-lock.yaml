@@ -44,6 +44,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.4.19
     version: 13.4.19(eslint@8.47.0)(typescript@5.1.6)
+  fast-glob:
+    specifier: ^3.3.1
+    version: 3.3.1
   lucide-react:
     specifier: ^0.268.0
     version: 0.268.0(react@18.2.0)
@@ -82,9 +85,6 @@ dependencies:
     version: 3.22.2
 
 devDependencies:
-  concurrent:
-    specifier: ^0.3.2
-    version: 0.3.2
   concurrently:
     specifier: ^8.2.0
     version: 8.2.0
@@ -1537,10 +1537,6 @@ packages:
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: false
-
-  /concurrent@0.3.2:
-    resolution: {integrity: sha512-KoUIH3pHceLMOeviiAnOzdQ8630lNclszDv8IGXx2Gn+5xXZroLqSWWzisweX//X7LyYOCKy10398bb0ksjvsA==}
-    dev: true
 
   /concurrently@8.2.0:
     resolution: {integrity: sha512-nnLMxO2LU492mTUj9qX/az/lESonSZu81UznYDoXtz1IQf996ixVqPAgHXwvHiHCAef/7S8HIK+fTFK7Ifk8YA==}
