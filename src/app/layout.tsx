@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50`}>
-        <nav className="p-6 py-4 bg-gray-100 border-t-4 border-t-sky-500 flex items-center space-x-6">
+        <nav className="flex items-center justify-between bg-gray-100 border-t-4 border-t-sky-500 p-6 py-4 space-x-6">
           <h1 className="font-semibold tracking-tighter text-gray-700">
             Content Platform
           </h1>
