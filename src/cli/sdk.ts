@@ -2,17 +2,19 @@ import fs from "fs/promises";
 import path from "path";
 
 const DB_PATH = path.join(
-  __dirname,
-  "../../../Documents/MyNotes",
+  process.cwd(),
+  "../../Documents/MyNotes",
   "ObsidianVault"
 );
 
-interface GetFolderResult {
-  folders: {
-    absolutePath: string;
-    relativePath: string;
-    label: string;
-  }[];
+export interface GetFolderResult {
+  folders: Folder[];
+}
+
+export interface Folder {
+  absolutePath: string;
+  relativePath: string;
+  label: string;
 }
 
 const transformDashCaseToSentenceCase = (str: string) => {
