@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Folder } from "@/cli/sdk";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -52,38 +53,19 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export const Menu = () => {
+export function Menu(props: { folders: Folder[] }) {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Main Directories</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {props.folders.map((folder) => (
                 <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
+                  key={folder.absolutePath}
+                  title={folder.label}
+                ></ListItem>
               ))}
             </ul>
           </NavigationMenuContent>
@@ -98,7 +80,7 @@ export const Menu = () => {
       </NavigationMenuList>
     </NavigationMenu>
   );
-};
+}
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
