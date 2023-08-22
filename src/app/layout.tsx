@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Menu } from "./Menu";
-import { getFolders } from "@/cli/sdk";
+import { getMainFolders } from "@/cli/sdk";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +16,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const foldersResult = await getFolders();
+  const foldersResult = await getMainFolders();
 
   return (
     <html lang="en">

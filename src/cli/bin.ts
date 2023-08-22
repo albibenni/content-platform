@@ -1,8 +1,8 @@
 import fg from "fast-glob";
-import { getFolders } from "./sdk";
+import { getMainFolders } from "./sdk";
 
 const main = async () => {
-  const { folders } = await getFolders();
+  const { folders } = await getMainFolders();
   const files = await fg(
     folders.map((folder) => `${folder.absolutePath}/**/*.md`)
   );
