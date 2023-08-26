@@ -21,7 +21,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50`}>
-        <nav className="flex items-center justify-between bg-gray-100 border-t-4 border-t-sky-500 p-6 py-4 space-x-6">
+        <nav className="flex items-center bg-gray-100 border-t-4 border-t-sky-500 p-6 py-4 space-x-6">
           <h1 className="font-semibold tracking-tighter text-gray-700">
             Content Vault
           </h1>
